@@ -11,6 +11,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
+// Privacy Policy Route
+app.get('/privacy', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'privacy.html'));
+});
+
 // 1. Initial Auth Request
 app.get('/auth', (req, res) => {
     const appId = process.env.INSTAGRAM_APP_ID;
