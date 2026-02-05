@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Access Token Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="instagram-icon">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <h1>IG Token Tool</h1>
+            </div>
+            <p class="subtitle">Get your Instagram Graph API access token instantly.</p>
+        </header>
+
+        <main>
+            <div id="setup-view" class="view">
+                <div class="card">
+                    <h2>Setup Required</h2>
+                    <p>Before you begin, ensure you have your Meta App credentials in the <code>.env</code> file.</p>
+                    <button id="login-btn" class="primary-btn">
+                        <span>Sign in with Instagram</span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="result-view" class="view hidden">
+                <div class="card success">
+                    <h2>Your Access Token</h2>
+                    <div class="token-container">
+                        <code id="token-display"></code>
+                        <button id="copy-btn" class="icon-btn" title="Copy to clipboard">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="token-expiry">This is a long-lived token (valid for 60 days).</p>
+                    <button id="reset-btn" class="secondary-btn">Start Over</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Requires an Instagram Professional Account linked to a Facebook Page.</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
